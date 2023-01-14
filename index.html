@@ -184,6 +184,74 @@
   
     <article>
   <header>
+    <h2><a href="https://IceTeaOxO.github.io/post/hugosite/">使用Hugo&#43;GitHub Page打造自己的Blog</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>14 Jan 2023, 14:28</time>
+  </div>
+
+  
+
+  
+
+  
+
+</div>
+
+  </header>
+
+  <p>
+  先下載Hugo mac的用戶可以使用
+brew install hugo window的用戶請參考官方文件
+在GitHub建立mysite的repository，clone到自己的桌面
+在GitHub建立.github.io的repository，並clone到自己的桌面，並增加README.md後push到GitHub
+git clone https://github.com/&lt;User&gt;/&lt;User&gt;.github.io.git cd &lt;User&gt;.github.io echo &#39;`Hello World`&#39; &gt; README.md git add . git commit -m &#34;init commit&#34; git push origin main 4.接下來使用Hugo建立自己的網站
+cd desktop hugo new site mysite 創建新的post並且修改mypost.md的draft為false cd mysite hugo new posts/mypost.md draft: false 運行Hugo server查看是否成功 hugo server 選擇自己想要的主題，並且進入到該主題的GitHub並複製clone URL。 切換目錄到themes，並clone該主題的GitHub，或者使用submodule
+cd themes git clone https://github.com/yoshiharuyamashita/blackburn.git (git submodule add https://github.com/yoshiharuyamashita/blackburn.git) 修改config.toml，在後面增加theme = &ldquo;blackburn&rdquo;(clone主題的名稱)，並且修改baseURL，整份文件目前如下 baseURL = &#39;https://&lt;User&gt;.github.io/&#39; languageCode = &#39;zn-tw&#39; title = &#39;My New Hugo Site&#39; theme = &#34;blackburn&#34; 連結.
+  </p>
+
+  
+  <footer>
+    <a href="/post/hugosite/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+    <article>
+  <header>
+    <h2><a href="https://IceTeaOxO.github.io/post/three/">Three</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>14 Jan 2023, 14:25</time>
+  </div>
+
+  
+
+  
+
+  
+
+</div>
+
+  </header>
+
+  <p>
+  反正就是拿來測試，可以先用hugo看長怎樣，之後再套自己喜歡的模板就好，但是不知道要如何自定一些小功能?
+  </p>
+
+  
+</article>
+
+  
+    <article>
+  <header>
     <h2><a href="https://IceTeaOxO.github.io/post/title_of_the_post/">Title_of_the_post</a></h2>
 
     <div class="post-meta">
