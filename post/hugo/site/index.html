@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.109.0">
+
+  <title>使用Hugo&#43;GitHub Page打造自己的Blog &middot; Pure White </title>
+
+    
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet" type="text/css">
+
+  
+  <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+ 
+  
+
+  
+
+  <link rel="shortcut icon" href="https://IceTeaOxO.github.io/img/favicon.ico" type="image/x-icon" />
+
+  
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+
+  <div>
+  <div class="small-print">
+    <small></small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>使用Hugo&#43;GitHub Page打造自己的Blog</h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>14 Jan 2023, 14:28</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://IceTeaOxO.github.io/tags/hugo">hugo</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  <ol>
+<li>先下載Hugo</li>
+</ol>
+<p>mac的用戶可以使用</p>
+<pre tabindex="0"><code>brew install hugo
+</code></pre><p>window的用戶請參考<a href="https://gohugo.io/installation/windows/">官方文件</a></p>
+<ol start="2">
+<li>
+<p>在GitHub建立mysite的repository，clone到自己的桌面</p>
+</li>
+<li>
+<p>在GitHub建立<!-- raw HTML omitted -->.github.io的repository，並clone到自己的桌面，並增加README.md後push到GitHub</p>
+</li>
+</ol>
+<pre tabindex="0"><code>git clone https://github.com/&lt;User&gt;/&lt;User&gt;.github.io.git
+cd &lt;User&gt;.github.io
+echo &#39;`Hello World`&#39; &gt; README.md
+git add .
+git commit -m &#34;init commit&#34;
+git push origin main
+</code></pre><p>4.接下來使用Hugo建立自己的網站</p>
+<pre tabindex="0"><code>cd desktop
+hugo new site mysite
+</code></pre><ol start="5">
+<li>創建新的post並且修改mypost.md的draft為false</li>
+</ol>
+<pre tabindex="0"><code>cd mysite
+hugo new posts/mypost.md
+</code></pre><pre tabindex="0"><code>draft: false
+</code></pre><ol start="6">
+<li>運行Hugo server查看是否成功</li>
+</ol>
+<pre tabindex="0"><code>hugo server
+</code></pre><ol start="7">
+<li>選擇自己想要的<a href="https://themes.gohugo.io/">主題</a>，並且進入到該主題的GitHub並複製clone URL。</li>
+</ol>
+<p>切換目錄到themes，並clone該主題的GitHub，或者使用submodule</p>
+<pre tabindex="0"><code>cd themes
+git clone https://github.com/yoshiharuyamashita/blackburn.git
+(git submodule add https://github.com/yoshiharuyamashita/blackburn.git)
+</code></pre><ol start="8">
+<li>修改config.toml，在後面增加theme = &ldquo;blackburn&rdquo;(clone主題的名稱)，並且修改baseURL，整份文件目前如下</li>
+</ol>
+<pre tabindex="0"><code>baseURL = &#39;https://&lt;User&gt;.github.io/&#39;
+languageCode = &#39;zn-tw&#39;
+title = &#39;My New Hugo Site&#39;
+theme = &#34;blackburn&#34;
+</code></pre><ol start="9">
+<li>連結<!-- raw HTML omitted -->.github.io，先回到mysite目錄，確認有沒有public資料夾，如果有可以先將它刪除</li>
+</ol>
+<pre tabindex="0"><code>cd mysite
+git submodule add -b main https://github.com/&lt;User&gt;/&lt;User&gt;.github.io.git public
+</code></pre><ol start="10">
+<li>回到mysite目錄，打包hugo，hugo會自動產生網頁的檔案在public，進入到public push上github，會發現檔案出現在自己的<!-- raw HTML omitted -->.github.io</li>
+</ol>
+<pre tabindex="0"><code>hugo
+cd public
+git add .
+git commit -m &#34;commit&#34;
+git push origin main
+</code></pre><ol start="11">
+<li>進入到Setting&gt;Pages&gt;調整Branch為main等待幾分鐘就可以看到自己的網站了</li>
+</ol>
+<!-- raw HTML omitted -->
+<h3 id="略為匆忙的紀錄後續會再進行修改">略為匆忙的紀錄，後續會再進行修改</h3>
+<p><a href="https://orianna-zzo.github.io/series/blog%E5%85%BB%E6%88%90%E8%AE%B0/">進階參考資源</a></p>
+
+  
+  <h4><i class="fas fa-share-alt" aria-hidden="true"></i>&nbsp;Share!</h4>
+<ul class="share-buttons">
+	<li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fIceTeaOxO.github.io%2fpost%2fhugo%2fsite%2f" target="_blank" title="Share on Facebook"><i class="fab fa-facebook" aria-hidden="true"></i><span class="sr-only">Share on Facebook</span></a>
+	</li>&nbsp;&nbsp;&nbsp;
+	<li><a href="https://twitter.com/intent/tweet?source=https%3a%2f%2fIceTeaOxO.github.io%2fpost%2fhugo%2fsite%2f" target="_blank" title="Tweet"><i class="fab fa-twitter" aria-hidden="true"></i><span class="sr-only">Tweet</span></a>
+	</li>&nbsp;&nbsp;&nbsp;
+	<li><a href="https://plus.google.com/share?url=https%3a%2f%2fIceTeaOxO.github.io%2fpost%2fhugo%2fsite%2f" target="_blank" title="Share on Google+"><i class="fab fa-google-plus" aria-hidden="true"></i><span class="sr-only">Share on Google+</span></a>
+	</li>&nbsp;&nbsp;&nbsp;
+	<li><a href="http://www.tumblr.com/share?v=3&u=https%3a%2f%2fIceTeaOxO.github.io%2fpost%2fhugo%2fsite%2f" target="_blank" title="Post to Tumblr"><i class="fab fa-tumblr" aria-hidden="true"></i><span class="sr-only">Post to Tumblr</span></a>
+	</li>&nbsp;&nbsp;&nbsp;
+	<li><a href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2fIceTeaOxO.github.io%2fpost%2fhugo%2fsite%2f" target="_blank" title="Pin it"><i class="fab fa-pinterest-p" aria-hidden="true"></i><span class="sr-only">Pin it</span></a>
+	</li>&nbsp;&nbsp;&nbsp;
+	<li><a href="http://www.reddit.com/submit?url=https%3a%2f%2fIceTeaOxO.github.io%2fpost%2fhugo%2fsite%2f" target="_blank" title="Submit to Reddit"><i class="fab fa-reddit-alien" aria-hidden="true"></i><span class="sr-only">Submit to Reddit</span></a>
+	</li>
+</ul>
+
+
+<style>
+	ul.share-buttons{
+	  list-style: none;
+	  padding: 0;
+	}
+
+	ul.share-buttons li{
+	  display: inline;
+	}
+
+	ul.share-buttons .sr-only{
+	  position: absolute;
+	  clip: rect(1px 1px 1px 1px);
+	  clip: rect(1px, 1px, 1px, 1px);
+	  padding: 0;
+	  border: 0;
+	  height: 1px;
+	  width: 1px;
+	  overflow: hidden;
+	}
+</style>
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+</div>
+
+</div>
+</div>
+<script src="https://IceTeaOxO.github.io/js/ui.js"></script>
+<script src="https://IceTeaOxO.github.io/js/menus.js"></script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+

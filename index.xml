@@ -9,10 +9,10 @@
     <lastBuildDate>Sat, 14 Jan 2023 14:28:16 +0800</lastBuildDate><atom:link href="https://IceTeaOxO.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>使用Hugo&#43;GitHub Page打造自己的Blog</title>
-      <link>https://IceTeaOxO.github.io/post/hugosite/</link>
+      <link>https://IceTeaOxO.github.io/post/hugo/site/</link>
       <pubDate>Sat, 14 Jan 2023 14:28:16 +0800</pubDate>
       
-      <guid>https://IceTeaOxO.github.io/post/hugosite/</guid>
+      <guid>https://IceTeaOxO.github.io/post/hugo/site/</guid>
       <description>先下載Hugo mac的用戶可以使用
 brew install hugo window的用戶請參考官方文件
 在GitHub建立mysite的repository，clone到自己的桌面
@@ -20,15 +20,6 @@ brew install hugo window的用戶請參考官方文件
 git clone https://github.com/&amp;lt;User&amp;gt;/&amp;lt;User&amp;gt;.github.io.git cd &amp;lt;User&amp;gt;.github.io echo &amp;#39;`Hello World`&amp;#39; &amp;gt; README.md git add . git commit -m &amp;#34;init commit&amp;#34; git push origin main 4.接下來使用Hugo建立自己的網站
 cd desktop hugo new site mysite 創建新的post並且修改mypost.md的draft為false cd mysite hugo new posts/mypost.md draft: false 運行Hugo server查看是否成功 hugo server 選擇自己想要的主題，並且進入到該主題的GitHub並複製clone URL。 切換目錄到themes，並clone該主題的GitHub，或者使用submodule
 cd themes git clone https://github.com/yoshiharuyamashita/blackburn.git (git submodule add https://github.com/yoshiharuyamashita/blackburn.git) 修改config.toml，在後面增加theme = &amp;ldquo;blackburn&amp;rdquo;(clone主題的名稱)，並且修改baseURL，整份文件目前如下 baseURL = &amp;#39;https://&amp;lt;User&amp;gt;.github.io/&amp;#39; languageCode = &amp;#39;zn-tw&amp;#39; title = &amp;#39;My New Hugo Site&amp;#39; theme = &amp;#34;blackburn&amp;#34; 連結.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://IceTeaOxO.github.io/readme/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://IceTeaOxO.github.io/readme/</guid>
-      <description>���H�e�l�l�o� �W�o�r�l�d��� �</description>
     </item>
     
   </channel>

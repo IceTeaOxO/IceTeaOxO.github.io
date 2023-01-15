@@ -2,20 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://IceTeaOxO.github.io/series/blog/</loc>
+    <lastmod>2023-01-14T14:28:16+08:00</lastmod>
+  </url><url>
+    <loc>https://IceTeaOxO.github.io/categories/</loc>
+    <lastmod>2023-01-14T14:28:16+08:00</lastmod>
+  </url><url>
+    <loc>https://IceTeaOxO.github.io/categories/github-page/</loc>
+    <lastmod>2023-01-14T14:28:16+08:00</lastmod>
+  </url><url>
+    <loc>https://IceTeaOxO.github.io/tags/hugo/</loc>
+    <lastmod>2023-01-14T14:28:16+08:00</lastmod>
+  </url><url>
     <loc>https://IceTeaOxO.github.io/post/</loc>
     <lastmod>2023-01-14T14:28:16+08:00</lastmod>
   </url><url>
     <loc>https://IceTeaOxO.github.io/</loc>
     <lastmod>2023-01-14T14:28:16+08:00</lastmod>
   </url><url>
-    <loc>https://IceTeaOxO.github.io/post/hugosite/</loc>
+    <loc>https://IceTeaOxO.github.io/series/</loc>
     <lastmod>2023-01-14T14:28:16+08:00</lastmod>
   </url><url>
-    <loc>https://IceTeaOxO.github.io/readme/</loc>
-    <priority>0</priority>
-  </url><url>
-    <loc>https://IceTeaOxO.github.io/categories/</loc>
-  </url><url>
     <loc>https://IceTeaOxO.github.io/tags/</loc>
+    <lastmod>2023-01-14T14:28:16+08:00</lastmod>
+  </url><url>
+    <loc>https://IceTeaOxO.github.io/post/hugo/site/</loc>
+    <lastmod>2023-01-14T14:28:16+08:00</lastmod>
   </url>
 </urlset>
