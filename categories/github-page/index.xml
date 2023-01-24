@@ -1,12 +1,46 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>GitHub Page on Pure White </title>
+    <title>GitHub Page on Pure White</title>
     <link>https://IceTeaOxO.github.io/categories/github-page/</link>
-    <description>Recent content in GitHub Page on Pure White </description>
+    <description>Recent content in GitHub Page on Pure White</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zn-tw</language>
-    <lastBuildDate>Sat, 14 Jan 2023 14:28:16 +0800</lastBuildDate><atom:link href="https://IceTeaOxO.github.io/categories/github-page/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 15 Jan 2023 20:46:22 +0800</lastBuildDate><atom:link href="https://IceTeaOxO.github.io/categories/github-page/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C#簡介</title>
+      <link>https://IceTeaOxO.github.io/post/csharp/intro/</link>
+      <pubDate>Sun, 15 Jan 2023 20:46:22 +0800</pubDate>
+      
+      <guid>https://IceTeaOxO.github.io/post/csharp/intro/</guid>
+      <description>C#文件
+C#核心是物件導向的語言，可以定義類型及行為
+垃圾收集 可為null 例外狀況處理 Lambda運算式:支援功能型程式設計 語言整合式查詢(LINQ) 非同步作業:支援建立分散式系統的語法 具統一的類型系統:所有的型別都繼承自object 支援定義參考型別和實數值型別 動態設定物件和輕量結構的內嵌儲存體 支援泛型方法和類型 強調版本控制:virtual和override修飾詞、方法多載解析的規則，對明確介面成員宣告的支援 .NET C#在.NET上執行
+CLR:虛擬執行系統和一組類別庫 CLI:建立執行和開發環境的基礎 C#原始程式碼會先編譯成符合CLI規格(IL)的中繼語言，IL程式碼和資源都會儲存在袁建中，通常會有.dll的副檔名，元件包含的資訊會提供元件類型、版本和文化特性等資訊
+執行C#程式時，會將元件載入至CLR，CLR會執行及時(JIT)編譯，將IL程式碼轉換成原生電烤指令。CLR提供自動垃圾收集、例外狀況處理和資源管理，由CLR執行的程式碼稱為&amp;quot;受控碼&amp;quot;。
+&amp;ldquo;非受控碼&amp;quot;會編譯成以特定平台為目標的原生電腦語言。
+C#編譯器所產生的IL程式碼符合一般類型規格(CTS)，可以和從.NET版本的F#、VB、C++產生的程式碼互動，單一元件可能包含多個以不同.NET語言撰寫的模組。類型可以彼此參考(如果以相同語言撰寫)。
+using NameSpaceclass className{static void Main(){Console.WriteLine(&amp;#34;Hello, World&amp;#34;);}} 命名空間包含型別和其他命名空間，如System包含Console類別和其他命名空間如IO、Collections，能夠以非限定的方式使用屬於該命名空間成員的型別(System.Console.WriteLine-&amp;gt;Console.WriteLine)
+static方法不需要參考特定物件即可運作
+執行個體方法可以使用this參考特定的封入物件來執行個體
+慣例，名為Main的靜態方法可作為C#程式的進入點
+型別與變數 C#中有兩種型別:實值型別和參考型別
+實值型別的變數包含其資料，又稱為物件，每個變數都有自己的資料副本，可進一步分成:
+簡單型別 帶正負號的整數:short,int,long 不帶正負號的整數:ushort,uint,ulong Unidoce字元:utf-16 IEEE二進位浮點數:double 高精確度十進位浮點數: 布林值:bool 列舉型別 表單enum E {&amp;hellip;}的使用者定義型別。enum型別是包含具名常數的不同型別，每個enum都具有一個基礎型別，必須是八種整數型別之一，enum型別的值組和基礎型別的值組相同 結構型別 使用者定義型別，格是為struct S {&amp;hellip;} 可為null的實值型別 含有null值的所有其他數值型別的擴充 元組實值型別 使用者定義型別，格式為(T1,T2,&amp;hellip;) 參考型別的變數會儲存其對資料的參考，可能會有兩個變數參考同一個物件，對變數進行作業會影響另一變數所參考的物件，可進一步分割成:
+類別型別 所有其他型別的基底類別:object Unicode字串:代表一系列utf-16程式碼單位 使用者定義型別，格式為class C {&amp;hellip;} 介面型別 使用者定義型別，格式為interface I {&amp;hellip;} 陣列型別 一為、多為和不規則，如:int[]、int[,]、int[][] 委派型別 使用者定義型別，格式為 delegate int D(&amp;hellip;) 識別碼是變數名稱，識別碼是unicode字元序列，可以是C#保留字(如果前面加上@)，在與其他語言互動時，使用保留字作為識別碼會很有用</description>
+    </item>
+    
+    <item>
+      <title>Docker</title>
+      <link>https://IceTeaOxO.github.io/post/docker/docker/</link>
+      <pubDate>Sun, 15 Jan 2023 19:40:27 +0800</pubDate>
+      
+      <guid>https://IceTeaOxO.github.io/post/docker/docker/</guid>
+      <description>DOCKER 消除版本衝突，提供標準化環境 可以快速啟動，佔用硬體空間更小 DOCKER 簡介、架構 image 唯獨的模板，可以包含完整的作業系統，也可以用來建立container 擁有不同的tag 像是推積木:App image&amp;gt;Tomcat image&amp;gt;MySQL image&amp;gt;OS image container container是從image建立的執行實例，可以被啟動、開始、停止、刪除，每個container都是隔離的 透過image執行起來的process，同一個image可以啟動多個container container之間的環境是隔離的，就算同時開port 8080也不會衝到 repository(如Docker Hub) repository是存放image的場所 分為公開和私有 倉庫註冊伺服器Registry，可存放多個repository 底層技術是linux kernel,Namespace,Cgroup，所以要先確認是否有被支援
+Namespace用來作環境隔離用，Cgroup用來做系統資源的管理
+DOCKER系統架構:主要為client-server，server的部分稱為Docker Daemon Docker Daemon:用來管理image,啟動、停止container，提供Restful API給使用者操作及顯示資訊。 Docker Client:使用Restful API連到Daemon，並提供command line的方式讓使用者操作 Image哪裡來 Docker Hub pull 從另一台電腦image export在import到自己電腦 自行撰寫Dockerfile DOCKER COMMAND 重開機自動啟動docker service:systemctl enable docker 調整docker.sock檔案權限:chmon 777 /var/run/docker.sock 從Docker Hub搜尋image:docker search ubuntu -f is-official=true pull image:docker pull ubuntu 查看本機有的image:docker images 執行container並進入terminal:docker run -it ubuntu /bin/bash(會進入container terminal，可以在裡面安裝其他東西) 查看container IP:cat /etc/hosts 要使用ifconfig 需要安裝net-tools:apt-get install -y net-tools 確認正在運行的container:docker ps -a 關閉container:exit 不停止container只退出docker container terminal:ctrl+p之後在ctrl+q 提交更新後的副本:docker commit -m &amp;quot;&amp;quot; &amp;hellip; command line整理 docker search docker pull docker images docker run docker ps docker rm #移除容器 docker rmi #移除image(在刪除image之前要先刪掉依賴的container) systemctl stop firewalld#關閉防火牆 DOCKER FILE 補充資料</description>
+    </item>
+    
     <item>
       <title>使用Hugo&#43;GitHub Page打造自己的Blog</title>
       <link>https://IceTeaOxO.github.io/post/hugo/site/</link>

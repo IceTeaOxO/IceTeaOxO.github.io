@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.109.0">
+
+  <title>Docker &middot; Pure White</title>
+
+    
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet" type="text/css">
+
+  
+  <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+ 
+  
+
+  
+
+  <link rel="shortcut icon" href="https://IceTeaOxO.github.io/img/favicon.ico" type="image/x-icon" />
+
+  
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+
+  <div>
+  <div class="small-print">
+    <small></small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>Docker</h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>15 Jan 2023, 19:40</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://IceTeaOxO.github.io/tags/docker">Docker</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  <h1 id="docker">DOCKER</h1>
+<!-- raw HTML omitted -->
+<ol>
+<li>消除版本衝突，提供標準化環境</li>
+<li>可以快速啟動，佔用硬體空間更小</li>
+</ol>
+<!-- raw HTML omitted -->
+<hr>
+<h2 id="docker-簡介架構">DOCKER 簡介、架構</h2>
+<!-- raw HTML omitted -->
+<ul>
+<li>image
+<ul>
+<li>唯獨的模板，可以包含完整的作業系統，也可以用來建立container</li>
+<li>擁有不同的tag</li>
+<li>像是推積木:App image&gt;Tomcat image&gt;MySQL image&gt;OS image</li>
+</ul>
+</li>
+<li>container
+<ul>
+<li>container是從image建立的執行實例，可以被啟動、開始、停止、刪除，每個container都是隔離的</li>
+<li>透過image執行起來的process，同一個image可以啟動多個container</li>
+<li>container之間的環境是隔離的，就算同時開port 8080也不會衝到</li>
+</ul>
+</li>
+<li>repository(如Docker Hub)
+<ul>
+<li>repository是存放image的場所</li>
+<li>分為公開和私有</li>
+<li>倉庫註冊伺服器Registry，可存放多個repository</li>
+</ul>
+</li>
+</ul>
+<p>底層技術是linux kernel,Namespace,Cgroup，所以要先確認是否有被支援</p>
+<p>Namespace用來作環境隔離用，Cgroup用來做系統資源的管理</p>
+<ul>
+<li>DOCKER系統架構:主要為client-server，server的部分稱為Docker Daemon
+<ul>
+<li>Docker Daemon:用來管理image,啟動、停止container，提供Restful API給使用者操作及顯示資訊。</li>
+<li>Docker Client:使用Restful API連到Daemon，並提供command line的方式讓使用者操作</li>
+</ul>
+</li>
+<li>Image哪裡來
+<ul>
+<li>Docker Hub pull</li>
+<li>從另一台電腦image export在import到自己電腦</li>
+<li>自行撰寫Dockerfile</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<hr>
+<h2 id="docker-command">DOCKER COMMAND</h2>
+<!-- raw HTML omitted -->
+<ul>
+<li>重開機自動啟動docker service:systemctl enable docker</li>
+<li>調整docker.sock檔案權限:chmon 777 /var/run/docker.sock</li>
+<li>從Docker Hub搜尋image:docker search ubuntu -f is-official=true</li>
+<li>pull image:docker pull ubuntu</li>
+<li>查看本機有的image:docker images</li>
+<li>執行container並進入terminal:docker run -it ubuntu /bin/bash(會進入container terminal，可以在裡面安裝其他東西)
+<ul>
+<li>查看container IP:cat /etc/hosts</li>
+<li>要使用ifconfig 需要安裝net-tools:apt-get install -y net-tools</li>
+</ul>
+</li>
+<li>確認正在運行的container:docker ps -a</li>
+<li>關閉container:exit</li>
+<li>不停止container只退出docker container terminal:ctrl+p之後在ctrl+q</li>
+<li>提交更新後的副本:docker commit -m &quot;&quot; &hellip;</li>
+</ul>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h3 id="command-line整理">command line整理</h3>
+<ul>
+<li>docker search</li>
+<li>docker pull</li>
+<li>docker images</li>
+<li>docker run</li>
+<li>docker ps</li>
+<li>docker rm #移除容器</li>
+<li>docker rmi #移除image(在刪除image之前要先刪掉依賴的container)</li>
+<li>systemctl stop firewalld#關閉防火牆</li>
+</ul>
+<!-- raw HTML omitted -->
+<hr>
+<h2 id="docker-file">DOCKER FILE</h2>
+<!-- raw HTML omitted -->
+<p><a href="https://philipzheng.gitbook.io/docker_practice/dockerfile/instructions">補充資料</a></p>
+<ul>
+<li>
+<p>建立docker file:</p>
+<ul>
+<li>mkdir sinatra</li>
+<li>cd sinatra</li>
+<li>vi/touch Dockerfile
+<ul>
+<li>FROM ubuntu:14.04 #告訴DOCKER要使用哪個image為基底</li>
+<li>MAINTAINTER #維護者訊息</li>
+<li>RUN apt-get -qq update</li>
+<li>RUN yum install -y wget #RUN後面放linux指令，用來執行安裝和設定</li>
+<li>ADD fileName / #把local檔案複製到image裡，如果是tar.gz會自動解壓縮，也可以使用COPY</li>
+<li>ENV JAVA_HOME=/jdk1.8.0_152 #設定環境變數</li>
+<li>CMD [&quot;/apache-tomcat-7.0.82/bin/catalina.sh&quot;, &ldquo;run&rdquo;] #描述container執行後執行的程序</li>
+</ul>
+</li>
+<li>docker build -t mytomcat . &ndash;no-cache (build建立image，no cache是避免沒有build到修改過的dockerfile，-t是設定container的name,tag沒設定預設為latest)</li>
+</ul>
+</li>
+<li>
+<p>docker run imageName</p>
+</li>
+<li>
+<p>docker exec containerID(確認containerIP)，也可以使用port mapping解決</p>
+</li>
+<li>
+<p>docker run -p 8080:8080 mytomcat(container 8080對應到local 8080)</p>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<hr>
+<h2 id="docker-hub-registry">DOCKER HUB&amp; REGISTRY</h2>
+<!-- raw HTML omitted -->
+<ul>
+<li>docker login:登入docker hub</li>
+<li>docker search:查詢官方倉庫</li>
+<li>docker pull:將image下載到本地</li>
+<li>自動建立(待補充):對於需要經常升級image的程式來說，可以再docker hub中設定自動建立</li>
+</ul>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<ul>
+<li>sudo docker run -d -p 5000:5000 registry:取得官方的registry image執行，啟動本地私有倉庫，可以就由指定參數設定(待補充)
+<ul>
+<li>
+<p>sudo docker run -d -p 5000:5000 -v /home/user/registry-conf:/registry-conf -e DOCKER_REGISTRY_CONFIG=/registry-conf/config.yml registry:指定本地路徑</p>
+</li>
+<li>
+<p>sudo docker run -d -p 5000:5000 -v /opt/data/registry:/tmp/registry registry:預設情況會被建立在容器的/tmp/registry下</p>
+<ul>
+<li>-v:將映像檔檔案存放在本地的指定路徑。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>本地安裝(待補充)
+<ul>
+<li>ubuntu(待補充)</li>
+<li>centOS(待補充)</li>
+<li><a href="https://github.com/docker-archive/docker-registry">下載原始碼安裝</a>
+<ul>
+<li>修改設定檔案(待補充):cp config/config_sample.yml config/config.yml</li>
+</ul>
+</li>
+<li>標記image:docker tag image[:tag] [registryhost/][username/]name<a href="%E5%BE%85%E8%A3%9C%E5%85%85">:tag</a></li>
+<li>docker push imagename:上傳image</li>
+<li>使用curl查看倉庫中的image:curl http://192.168.7.26:5000/v1/search</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<p>Docker 的 Registry 利用設定檔案提供了一些倉庫的模組（flavor），使用者可以直接使用它們來進行開發或生產部署。</p>
+<!-- raw HTML omitted -->
+<ul>
+<li>common：基礎設定</li>
+<li>local：儲存資料到本地檔案系統</li>
+<li>s3：儲存資料到 AWS S3 中</li>
+<li>dev：使用 local 模組的基本設定</li>
+<li>test：單元測試使用</li>
+<li>prod：生產環境設定（基本上跟s3設定類似）</li>
+<li>gcs：儲存資料到 Google 的雲端</li>
+<li>swift：儲存資料到 OpenStack Swift 服務</li>
+<li>glance：儲存資料到 OpenStack Glance 服務，本地檔案系統為後備</li>
+<li>glance-swift：儲存資料到 OpenStack Glance 服務，Swift 為後備</li>
+<li>elliptics：儲存資料到 Elliptics key/value 儲存
+使用者也可以新增自定義的模版段。</li>
+</ul>
+<p>預設情況下使用的模組是 dev，要使用某個模組作為預設值，可以新增 SETTINGS_FLAVOR 到環境變數中:export SETTINGS_FLAVOR=dev(<a href="https://philipzheng.gitbook.io/docker_practice/repository/config">待補充</a>)</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>放上docker hub或自己的registry</p>
+<ul>
+<li>docker images確認自己的image</li>
+<li>docker tag {Image Name} (DockerHub帳號/Image Name，這只是TAG格式)#需要加上tag才能push到docker Hub</li>
+<li>docker login#登入docker Hub</li>
+<li>docker push tagName#將imagepush到docker Hub</li>
+<li>docker rmi #刪除local image</li>
+</ul>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h3 id="備份image成tar檔">備份image成tar檔</h3>
+<ul>
+<li>docker save -o mytomcat.tar imageName
+<ul>
+<li>-o:輸出檔案</li>
+<li>將 Docker Image 存檔出一個檔案</li>
+</ul>
+</li>
+<li>docker load -i mytomcat.tar
+<ul>
+<li>-i:放要import的檔案名稱</li>
+<li>把檔案 Load 到 Docker 的指令如下</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h3 id="docker-cloud">Docker Cloud</h3>
+<p>可以連結GitHub，只要將dockerfile push到github，docker cloud就會(pull)自動去建構image(把build放到雲端去做，需註冊docker cloud)</p>
+<p><a href="https://ithelp.ithome.com.tw/articles/10191508">教學網址</a></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h3 id="建立docker-registry-server">建立Docker Registry Server</h3>
+<ul>
+<li>
+<p>docker run -d -p 5000:5000 -v /home/user1/storage:/var/lib/registry &ndash;name registry registry:2</p>
+<ul>
+<li>-d：執行的 docker container 是 run 在背景的狀態，所以需要使用 docker logs 的指令才可以看到 log 狀態</li>
+<li>-p：主機的 5000 port mapping 到 container 的 5000 port</li>
+<li>-v：因為 push 到 docker registry 的資料是放在 container 裡面的，如果把 docker container 刪除掉 docker registry 的 Image 資料就會不見，因此需要使用 –v 參數將主機的檔案路徑 mapping 到 container 裡面的檔案路徑，這樣 docker container 被刪除 docker registry 的 Image 資料還會存在</li>
+<li>&ndash;name：設定 docker container 的名稱</li>
+</ul>
+</li>
+<li>
+<p>docker tag mytomcat 192.168.182.134:5000/mytomcat</p>
+</li>
+<li>
+<p>vi /etc/docker/daemon.json#需要修改daemon.json設定</p>
+<ul>
+<li>{
+&ldquo;live-restore&rdquo;: true,
+&ldquo;group&rdquo;: &ldquo;dockerroot&rdquo;,
+&ldquo;insecure-registries&rdquo;: [&ldquo;192.168.182.134:5000&rdquo;]
+}</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<hr>
+<h2 id="docker-container">DOCKER CONTAINER</h2>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>新建並啟動:sudo docker run -t -i ubuntu:14.04 /bin/bash</p>
+<ul>
+<li>-t:讓docker分配虛擬終端並綁訂到容器的標準輸入上</li>
+<li>-i:讓容器標準輸入保持打開</li>
+<li>docker run標準操作:檢查是否存在image，沒有就從公有倉庫下載&gt;使用image建立container&gt;分配一個檔案系統，並在image外面掛載一層可讀寫層&gt;從本機的網路橋介面中橋街一個虛擬port到容器中&gt;從位址池中設定一個ip位址給容器&gt;執行使用者指定的應用程式&gt;執行完畢後容器中止</li>
+</ul>
+</li>
+<li>
+<p>停止後重新啟動:docker start</p>
+<ul>
+<li>ps/top:查看程式訊息</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<ul>
+<li>在後台執行容器:sudo docker run -d ubuntu:14.04 /bin/sh -c &ldquo;while true; do echo hello world; sleep 1; done&rdquo;
+<ul>
+<li>-d:表示在後台執行</li>
+<li>docker logs:取得容器輸出訊息</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<ul>
+<li>docker stop:中止一個執行中的容器</li>
+<li>當容器中指定的應用終結時，容器也會自動停止:例如透過exit或者ctrl+d來退出終端時</li>
+<li>docker ps -a:查看中止狀態容器</li>
+<li>docker restart:會先將一個執行中的容器中止後再重新啟動她</li>
+</ul>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>使用-d參數，容器會進入背景執行，如果需要進入容器進行操作</p>
+<ul>
+<li>docker exec -ti containerNames</li>
+<li>docker attach containerNames</li>
+<li>ctrl+p and ctrl+q:跳離容器，讓他繼續在背景執行</li>
+<li>nsenter(待補充)</li>
+<li>.bashrc_docker(待補充)</li>
+</ul>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<ul>
+<li>docker export container_id outputFileName:匯出容器快照到本地檔案</li>
+<li>docker import :從容器快照檔案中再匯入為image，也可以指定URL匯入(快照將丟棄所有歷史紀錄與原始資料訊息，匯入可以重新指定TAG等原始資料訊息)</li>
+<li>docker load:匯入image儲存檔案到本地image庫(保存完整記錄，檔案體積較大)</li>
+</ul>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<ul>
+<li>docker rm:刪除一個處於中止狀態的容器
+<ul>
+<li>-f:docker會發送SIGKILL信號給容器</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<hr>
+<h2 id="docker-資料管理">DOCKER 資料管理</h2>
+<!-- raw HTML omitted -->
+<p>在容器中管理資料主要有兩種方式</p>
+<ul>
+<li>
+<p>資料卷Data volumes:</p>
+<ul>
+<li>
+<p>可供一個或多個容器使用的特殊目錄</p>
+</li>
+<li>
+<p>可以在容器中共享與重用</p>
+</li>
+<li>
+<p>對資料卷的修改會馬上生效</p>
+</li>
+<li>
+<p>對資料卷的更新不影響image</p>
+</li>
+<li>
+<p>卷會一直存在，直到沒有容器使用</p>
+</li>
+<li>
+<p>資料卷的使用類似liunx對目錄或檔案進行mount</p>
+</li>
+<li>
+<p>建立一個資料卷</p>
+<ul>
+<li>sudo docker run -d -P &ndash;name web -v /webapp training/webapp python app.py
+<ul>
+<li>使用-v來建立一個資料卷並掛載到容器裡</li>
+<li>在dockerFile裡也可以使用VOLUME來新增一個或多個卷到由該image建立的任意容器</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>掛載一個主機目錄作為資料卷</p>
+<ul>
+<li>sudo docker run -d -P &ndash;name web -v /src/webapp:/opt/webapp training/webapp python app.py</li>
+<li>載入主機目錄到容器目錄，可以放置程式在本地目錄中來查看是否正常運作，本地目錄須為絕對路徑，如果不存在會自動建立(dockerFile不支援這種用法)</li>
+<li>掛載資料卷的預設權限是讀寫，可以透過:ro指定為唯獨
+<ul>
+<li>sudo docker run -d -P &ndash;name web -v /src/webapp:/opt/webapp:ro training/webapp python app.py</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>掛載本地主機檔案作為資料卷</p>
+<ul>
+<li>sudo docker run &ndash;rm -it -v ~/.bash_history:/.bash_history ubuntu /bin/bash</li>
+<li>如果直接掛載一個檔案，可能會造成檔案inode改變，導致報錯，最簡單的辦法是直接掛載檔案的父目錄</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>資料卷容器Data volume containers:</p>
+<ul>
+<li>就是一個正常的容器，專門用來提供資料卷供其他容器掛載</li>
+<li>建立一個命名的資料卷容器dbdata
+<ul>
+<li>sudo docker run -d -v /dbdata &ndash;name dbdata training/postgres echo Data-only container for postgres</li>
+</ul>
+</li>
+<li>在其他容器中使用&ndash;volumes-from來掛載dbdata容器中的資料卷
+<ul>
+<li>sudo docker run -d &ndash;volumes-from dbdata &ndash;name db1 training/postgres</li>
+</ul>
+</li>
+<li>可以使用多個&ndash;volumes-from來從多個容器掛載多個資料卷，也可以從其他已經掛載容器卷的容器來掛載資料卷</li>
+<li>使用&ndash;volumes-from所掛載的資料卷的容器不需要保持在執行狀態</li>
+<li>如果刪除了掛載的容器，資料卷不會被自動刪除，如要刪除資料卷，必須在刪除最後一個還掛載他的容器時使用docker rm -v來指定同時刪除關聯的容器</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>備份(待補充)</p>
+<ul>
+<li>使用tar命令將資料卷備份為本地的tar檔</li>
+</ul>
+</li>
+<li>
+<p>恢復(待補充)</p>
+<ul>
+<li>如果要恢復資料到一個容器，需要先建立一個帶有資料卷的容器DB2</li>
+<li>然後建立另一個容器掛載DB2，並使用untar解壓縮備份檔案到掛載的容器卷中</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<hr>
+<h2 id="docker-internet">DOCKER Internet</h2>
+<!-- raw HTML omitted -->
+<p>容器可以執行網路應用(如開伺服器)，要讓外部(如本機端)存取，可以指定連接阜映射</p>
+<ul>
+<li>-P:docker會隨機應設一個49000-49900的port到內部容器開放的網路port</li>
+<li>docker ps:可以看到被映射的port</li>
+<li>docker logs:查看應用訊息</li>
+<li>-p:可以指定要映射的port，並且在指定的port上只可以綁定一個容器，支援的格式有
+<ul>
+<li>ip:hostPort:containerPort:映射到指定位置的指定連接阜</li>
+<li>ip::containerPort:映射到指定位置的任意連接阜，本機自動分配</li>
+<li>hostPort:containerPort:映射所有遠端位址</li>
+</ul>
+</li>
+<li>docker port : 查看當前映射的配置，也可察看綁定的位址</li>
+<li>docker inspect:可以獲取所有變數(容器有自己的內部網路和ip位址，以及可變的網路設定)</li>
+</ul>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>系統會在容器之間創建隧道，接收端容器可以看到來源端容器指定的訊息</p>
+<p>1.自定義容器命名:方便記憶，連接其他容器時可以作為參考
+* &ndash;name : 為容器自訂義命名
+* docker run &ndash;rm:容器會在中止後立即刪除，不能和-d同時使用</p>
+<p>2.容器互聯
+* &ndash;link:讓容器之間安全的進行互動，格式為
+* &ndash;link name:alias : name是要連接容器的名稱，alisa是連接的別名
+* 因為容器間建立了安全隧道，不用映射到port，避免暴露資料庫到外部port上
+* docker透過2種方式會容器公開連接訊息
+* 環境變數:使用env查看容器的環境變數
+* 更新/rtc/hosts檔案</p>
+<!-- raw HTML omitted -->
+<p><a href="https://philipzheng.gitbook.io/docker_practice/advanced_network">進階網路設定</a></p>
+<hr>
+<h2 id="docker-compose">DOCKER COMPOSE</h2>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<hr>
+<h2 id="docker-swarm">DOCKER SWARM</h2>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<hr>
+<h2 id="docker-machine">DOCKER MACHINE</h2>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<hr>
+<h3 id="其他">其他</h3>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+
+  
+  <h4><i class="fas fa-share-alt" aria-hidden="true"></i>&nbsp;Share!</h4>
+<ul class="share-buttons">
+	<li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fIceTeaOxO.github.io%2fpost%2fdocker%2fdocker%2f" target="_blank" title="Share on Facebook"><i class="fab fa-facebook" aria-hidden="true"></i><span class="sr-only">Share on Facebook</span></a>
+	</li>&nbsp;&nbsp;&nbsp;
+	<li><a href="https://twitter.com/intent/tweet?source=https%3a%2f%2fIceTeaOxO.github.io%2fpost%2fdocker%2fdocker%2f" target="_blank" title="Tweet"><i class="fab fa-twitter" aria-hidden="true"></i><span class="sr-only">Tweet</span></a>
+	</li>&nbsp;&nbsp;&nbsp;
+	<li><a href="https://plus.google.com/share?url=https%3a%2f%2fIceTeaOxO.github.io%2fpost%2fdocker%2fdocker%2f" target="_blank" title="Share on Google+"><i class="fab fa-google-plus" aria-hidden="true"></i><span class="sr-only">Share on Google+</span></a>
+	</li>&nbsp;&nbsp;&nbsp;
+	<li><a href="http://www.tumblr.com/share?v=3&u=https%3a%2f%2fIceTeaOxO.github.io%2fpost%2fdocker%2fdocker%2f" target="_blank" title="Post to Tumblr"><i class="fab fa-tumblr" aria-hidden="true"></i><span class="sr-only">Post to Tumblr</span></a>
+	</li>&nbsp;&nbsp;&nbsp;
+	<li><a href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2fIceTeaOxO.github.io%2fpost%2fdocker%2fdocker%2f" target="_blank" title="Pin it"><i class="fab fa-pinterest-p" aria-hidden="true"></i><span class="sr-only">Pin it</span></a>
+	</li>&nbsp;&nbsp;&nbsp;
+	<li><a href="http://www.reddit.com/submit?url=https%3a%2f%2fIceTeaOxO.github.io%2fpost%2fdocker%2fdocker%2f" target="_blank" title="Submit to Reddit"><i class="fab fa-reddit-alien" aria-hidden="true"></i><span class="sr-only">Submit to Reddit</span></a>
+	</li>
+</ul>
+
+
+<style>
+	ul.share-buttons{
+	  list-style: none;
+	  padding: 0;
+	}
+
+	ul.share-buttons li{
+	  display: inline;
+	}
+
+	ul.share-buttons .sr-only{
+	  position: absolute;
+	  clip: rect(1px 1px 1px 1px);
+	  clip: rect(1px, 1px, 1px, 1px);
+	  padding: 0;
+	  border: 0;
+	  height: 1px;
+	  width: 1px;
+	  overflow: hidden;
+	}
+</style>
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://IceTeaOxO.github.io/post/hugo/site/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://IceTeaOxO.github.io/post/hugo/site/">使用Hugo&#43;GitHub Page打造自己的Blog</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="https://IceTeaOxO.github.io/post/csharp/intro/">C#簡介</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://IceTeaOxO.github.io/post/csharp/intro/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+
+</div>
+
+</div>
+</div>
+<script src="https://IceTeaOxO.github.io/js/ui.js"></script>
+<script src="https://IceTeaOxO.github.io/js/menus.js"></script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
