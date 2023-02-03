@@ -1,5 +1,5 @@
-name: Waka Readme
-
+name: IceTeaOxO action
+description: my coding time
 on:
   schedule:
     # Runs at 12am IST
