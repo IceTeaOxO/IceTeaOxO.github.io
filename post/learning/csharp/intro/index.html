@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.109.0">
+
+  <title>C#簡介 &middot; Pure White</title>
+
+    
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet" type="text/css">
+
+  
+  <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+ 
+  
+
+  
+
+  <link rel="shortcut icon" href="https://IceTeaOxO.github.io/img/favicon.ico" type="image/x-icon" />
+
+  
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+
+  <div>
+  <div class="small-print">
+    <small></small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>C#簡介</h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>15 Jan 2023, 20:46</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://IceTeaOxO.github.io/tags/c">C#</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  <p><a href="https://learn.microsoft.com/zh-tw/dotnet/csharp/">C#文件</a></p>
+<p>C#核心是物件導向的語言，可以定義類型及行為</p>
+<ul>
+<li>垃圾收集</li>
+<li>可為null</li>
+<li>例外狀況處理</li>
+<li>Lambda運算式:支援功能型程式設計</li>
+<li>語言整合式查詢(LINQ)</li>
+<li>非同步作業:支援建立分散式系統的語法</li>
+<li>具統一的類型系統:所有的型別都繼承自object</li>
+<li>支援定義參考型別和實數值型別</li>
+<li>動態設定物件和輕量結構的內嵌儲存體</li>
+<li>支援泛型方法和類型</li>
+<li>強調版本控制:virtual和override修飾詞、方法多載解析的規則，對明確介面成員宣告的支援</li>
+</ul>
+<h2 id="net">.NET</h2>
+<p>C#在.NET上執行</p>
+<ul>
+<li>CLR:虛擬執行系統和一組類別庫</li>
+<li>CLI:建立執行和開發環境的基礎</li>
+</ul>
+<p>C#原始程式碼會先編譯成符合CLI規格(IL)的中繼語言，IL程式碼和資源都會儲存在袁建中，通常會有.dll的副檔名，元件包含的資訊會提供元件類型、版本和文化特性等資訊</p>
+<p>執行C#程式時，會將元件載入至CLR，CLR會執行及時(JIT)編譯，將IL程式碼轉換成原生電烤指令。CLR提供自動垃圾收集、例外狀況處理和資源管理，由CLR執行的程式碼稱為&quot;受控碼&quot;。</p>
+<p>&ldquo;非受控碼&quot;會編譯成以特定平台為目標的原生電腦語言。</p>
+<p>C#編譯器所產生的IL程式碼符合一般類型規格(CTS)，可以和從.NET版本的F#、VB、C++產生的程式碼互動，單一元件可能包含多個以不同.NET語言撰寫的模組。類型可以彼此參考(如果以相同語言撰寫)。</p>
+<pre tabindex="0"><code>using NameSpace
+class className
+{
+    static void Main()
+    {
+        Console.WriteLine(&#34;Hello, World&#34;);
+    }
+}
+</code></pre><p>命名空間包含型別和其他命名空間，如System包含Console類別和其他命名空間如IO、Collections，能夠以非限定的方式使用屬於該命名空間成員的型別(System.Console.WriteLine-&gt;Console.WriteLine)</p>
+<p>static方法不需要參考特定物件即可運作</p>
+<p>執行個體方法可以使用this參考特定的封入物件來執行個體</p>
+<p>慣例，名為Main的靜態方法可作為C#程式的進入點</p>
+<h2 id="型別與變數">型別與變數</h2>
+<p>C#中有兩種型別:實值型別和參考型別</p>
+<p>實值型別的變數包含其資料，又稱為物件，每個變數都有自己的資料副本，可進一步分成:</p>
+<ul>
+<li>簡單型別
+<ul>
+<li>帶正負號的整數:short,int,long</li>
+<li>不帶正負號的整數:ushort,uint,ulong</li>
+<li>Unidoce字元:utf-16</li>
+<li>IEEE二進位浮點數:double</li>
+<li>高精確度十進位浮點數:</li>
+<li>布林值:bool</li>
+</ul>
+</li>
+<li>列舉型別
+<ul>
+<li>表單enum E {&hellip;}的使用者定義型別。enum型別是包含具名常數的不同型別，每個enum都具有一個基礎型別，必須是八種整數型別之一，enum型別的值組和基礎型別的值組相同</li>
+</ul>
+</li>
+<li>結構型別
+<ul>
+<li>使用者定義型別，格是為struct S {&hellip;}</li>
+</ul>
+</li>
+<li>可為null的實值型別
+<ul>
+<li>含有null值的所有其他數值型別的擴充</li>
+</ul>
+</li>
+<li>元組實值型別
+<ul>
+<li>使用者定義型別，格式為(T1,T2,&hellip;)</li>
+</ul>
+</li>
+</ul>
+<p>參考型別的變數會儲存其對資料的參考，可能會有兩個變數參考同一個物件，對變數進行作業會影響另一變數所參考的物件，可進一步分割成:</p>
+<ul>
+<li>類別型別
+<ul>
+<li>所有其他型別的基底類別:object</li>
+<li>Unicode字串:代表一系列utf-16程式碼單位</li>
+<li>使用者定義型別，格式為class C {&hellip;}</li>
+</ul>
+</li>
+<li>介面型別
+<ul>
+<li>使用者定義型別，格式為interface I {&hellip;}</li>
+</ul>
+</li>
+<li>陣列型別
+<ul>
+<li>一為、多為和不規則，如:<code>int[]、int[,]、int[][]</code></li>
+</ul>
+</li>
+<li>委派型別
+<ul>
+<li>使用者定義型別，格式為 delegate int D(&hellip;)</li>
+</ul>
+</li>
+</ul>
+<p>識別碼是變數名稱，識別碼是unicode字元序列，可以是C#保留字(如果前面加上@)，在與其他語言互動時，使用保留字作為識別碼會很有用</p>
+<p>C#型別有六種，也可以<code>recode</code>宣告型別</p>
+<ul>
+<li>class型別定義資料結構，包含資料成員和函式成員(方法、函式、其他)，支援單一繼承與多型</li>
+<li>struct型別與類別型別相似，他代表具有資料成員與函式成員的結構，不同於class，struct是實數值型別，不需要堆積配置(heap)。struct不支援使用者指定的繼承，所有struct都繼承object</li>
+<li>interface將合約並譯成一組命名的功用成員，執行class或struct interface必須提供介面成員的實作。interface可以繼承多個基底interface，class或struct可以實作多個interface</li>
+<li>delegate代表對方法的參考，其中含有特定參數清單與傳回型別。委派可以將方法視為實體，而實體可以只派給變數或者當作參數傳遞。委派類似其他語言的函式指標，但不同的是，委派是物件導向安全的。</li>
+</ul>
+<p>class,struct interface,delegate型別全部支援泛型，因此可以使用其他型別進行參數化</p>
+<p>可為 null 的類型不需要個別的定義。 針對每一個不可為 null 的型 T 別，都有一個對應的可為 null 型 T? 別，可以保留額外的值 null 。 比方說， int? 是可以保存任何32位整數或值 null 的型別，而且 string? 是可保存任何 string 或值 null 的型別。</p>
+<p>編譯 c # 程式時，它們實際上會封裝成元件。 元件通常會有副檔名 .exe 或 .dll （取決於它們是否分別執行 .exe 或連結動態庫）。</p>
+<pre tabindex="0"><code>namespace Acme.Collections;
+
+public class Stack&lt;T&gt;
+{
+    Entry _top;
+
+    public void Push(T data)
+    {
+        _top = new Entry(_top, data);
+    }
+
+    public T Pop()
+    {
+        if (_top == null)
+        {
+            throw new InvalidOperationException();
+        }
+        T result = _top.Data;
+        _top = _top.Next;
+
+        return result;
+    }
+
+    class Entry
+    {
+        public Entry Next { get; set; }
+        public T Data { get; set; }
+
+        public Entry(Entry next, T data)
+        {
+            Next = next;
+            Data = data;
+        }
+    }
+}
+</code></pre><p>C # 程式可以儲存在數個原始程式檔中。 編譯 c # 程式時，所有的原始程式檔都會一起處理，而原始程式檔可以自由地互相參考。 就概念而言，在處理之前，所有的原始程式檔都會串連成一個大型檔案。 C # 中永遠不需要向前宣告，因為有一些例外狀況，宣告順序並不重要。 C # 不會限制原始程式檔僅宣告一個公用類型，也不會要求來源檔案的名稱符合原始程式檔中宣告的類型。</p>
+
+  
+  <h4><i class="fas fa-share-alt" aria-hidden="true"></i>&nbsp;Share!</h4>
+<ul class="share-buttons">
+	<li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fIceTeaOxO.github.io%2fpost%2flearning%2fcsharp%2fintro%2f" target="_blank" title="Share on Facebook"><i class="fab fa-facebook" aria-hidden="true"></i><span class="sr-only">Share on Facebook</span></a>
+	</li>&nbsp;&nbsp;&nbsp;
+	<li><a href="https://twitter.com/intent/tweet?source=https%3a%2f%2fIceTeaOxO.github.io%2fpost%2flearning%2fcsharp%2fintro%2f" target="_blank" title="Tweet"><i class="fab fa-twitter" aria-hidden="true"></i><span class="sr-only">Tweet</span></a>
+	</li>&nbsp;&nbsp;&nbsp;
+	<li><a href="https://plus.google.com/share?url=https%3a%2f%2fIceTeaOxO.github.io%2fpost%2flearning%2fcsharp%2fintro%2f" target="_blank" title="Share on Google+"><i class="fab fa-google-plus" aria-hidden="true"></i><span class="sr-only">Share on Google+</span></a>
+	</li>&nbsp;&nbsp;&nbsp;
+	<li><a href="http://www.tumblr.com/share?v=3&u=https%3a%2f%2fIceTeaOxO.github.io%2fpost%2flearning%2fcsharp%2fintro%2f" target="_blank" title="Post to Tumblr"><i class="fab fa-tumblr" aria-hidden="true"></i><span class="sr-only">Post to Tumblr</span></a>
+	</li>&nbsp;&nbsp;&nbsp;
+	<li><a href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2fIceTeaOxO.github.io%2fpost%2flearning%2fcsharp%2fintro%2f" target="_blank" title="Pin it"><i class="fab fa-pinterest-p" aria-hidden="true"></i><span class="sr-only">Pin it</span></a>
+	</li>&nbsp;&nbsp;&nbsp;
+	<li><a href="http://www.reddit.com/submit?url=https%3a%2f%2fIceTeaOxO.github.io%2fpost%2flearning%2fcsharp%2fintro%2f" target="_blank" title="Submit to Reddit"><i class="fab fa-reddit-alien" aria-hidden="true"></i><span class="sr-only">Submit to Reddit</span></a>
+	</li>
+</ul>
+
+
+<style>
+	ul.share-buttons{
+	  list-style: none;
+	  padding: 0;
+	}
+
+	ul.share-buttons li{
+	  display: inline;
+	}
+
+	ul.share-buttons .sr-only{
+	  position: absolute;
+	  clip: rect(1px 1px 1px 1px);
+	  clip: rect(1px, 1px, 1px, 1px);
+	  padding: 0;
+	  border: 0;
+	  height: 1px;
+	  width: 1px;
+	  overflow: hidden;
+	}
+</style>
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://IceTeaOxO.github.io/post/learning/hugo/site/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://IceTeaOxO.github.io/post/learning/hugo/site/">使用Hugo&#43;GitHub Page打造自己的Blog</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+  </div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+
+</div>
+
+</div>
+</div>
+<script src="https://IceTeaOxO.github.io/js/ui.js"></script>
+<script src="https://IceTeaOxO.github.io/js/menus.js"></script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+

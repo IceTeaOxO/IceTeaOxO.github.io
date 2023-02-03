@@ -9,10 +9,10 @@
     <lastBuildDate>Sun, 15 Jan 2023 20:46:22 +0800</lastBuildDate><atom:link href="https://IceTeaOxO.github.io/categories/github-page/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>C#簡介</title>
-      <link>https://IceTeaOxO.github.io/post/csharp/intro/</link>
+      <link>https://IceTeaOxO.github.io/post/learning/csharp/intro/</link>
       <pubDate>Sun, 15 Jan 2023 20:46:22 +0800</pubDate>
       
-      <guid>https://IceTeaOxO.github.io/post/csharp/intro/</guid>
+      <guid>https://IceTeaOxO.github.io/post/learning/csharp/intro/</guid>
       <description>C#文件
 C#核心是物件導向的語言，可以定義類型及行為
 垃圾收集 可為null 例外狀況處理 Lambda運算式:支援功能型程式設計 語言整合式查詢(LINQ) 非同步作業:支援建立分散式系統的語法 具統一的類型系統:所有的型別都繼承自object 支援定義參考型別和實數值型別 動態設定物件和輕量結構的內嵌儲存體 支援泛型方法和類型 強調版本控制:virtual和override修飾詞、方法多載解析的規則，對明確介面成員宣告的支援 .NET C#在.NET上執行
@@ -31,22 +31,11 @@ static方法不需要參考特定物件即可運作
     </item>
     
     <item>
-      <title>Docker</title>
-      <link>https://IceTeaOxO.github.io/post/docker/docker/</link>
-      <pubDate>Sun, 15 Jan 2023 19:40:27 +0800</pubDate>
-      
-      <guid>https://IceTeaOxO.github.io/post/docker/docker/</guid>
-      <description>DOCKER 消除版本衝突，提供標準化環境 可以快速啟動，佔用硬體空間更小 DOCKER 簡介、架構 image 唯獨的模板，可以包含完整的作業系統，也可以用來建立container 擁有不同的tag 像是推積木:App image&amp;gt;Tomcat image&amp;gt;MySQL image&amp;gt;OS image container container是從image建立的執行實例，可以被啟動、開始、停止、刪除，每個container都是隔離的 透過image執行起來的process，同一個image可以啟動多個container container之間的環境是隔離的，就算同時開port 8080也不會衝到 repository(如Docker Hub) repository是存放image的場所 分為公開和私有 倉庫註冊伺服器Registry，可存放多個repository 底層技術是linux kernel,Namespace,Cgroup，所以要先確認是否有被支援
-Namespace用來作環境隔離用，Cgroup用來做系統資源的管理
-DOCKER系統架構:主要為client-server，server的部分稱為Docker Daemon Docker Daemon:用來管理image,啟動、停止container，提供Restful API給使用者操作及顯示資訊。 Docker Client:使用Restful API連到Daemon，並提供command line的方式讓使用者操作 Image哪裡來 Docker Hub pull 從另一台電腦image export在import到自己電腦 自行撰寫Dockerfile DOCKER COMMAND 重開機自動啟動docker service:systemctl enable docker 調整docker.sock檔案權限:chmon 777 /var/run/docker.sock 從Docker Hub搜尋image:docker search ubuntu -f is-official=true pull image:docker pull ubuntu 查看本機有的image:docker images 執行container並進入terminal:docker run -it ubuntu /bin/bash(會進入container terminal，可以在裡面安裝其他東西) 查看container IP:cat /etc/hosts 要使用ifconfig 需要安裝net-tools:apt-get install -y net-tools 確認正在運行的container:docker ps -a 關閉container:exit 不停止container只退出docker container terminal:ctrl+p之後在ctrl+q 提交更新後的副本:docker commit -m &amp;quot;&amp;quot; &amp;hellip; command line整理 docker search docker pull docker images docker run docker ps docker rm #移除容器 docker rmi #移除image(在刪除image之前要先刪掉依賴的container) systemctl stop firewalld#關閉防火牆 DOCKER FILE 補充資料</description>
-    </item>
-    
-    <item>
       <title>使用Hugo&#43;GitHub Page打造自己的Blog</title>
-      <link>https://IceTeaOxO.github.io/post/hugo/site/</link>
+      <link>https://IceTeaOxO.github.io/post/learning/hugo/site/</link>
       <pubDate>Sat, 14 Jan 2023 14:28:16 +0800</pubDate>
       
-      <guid>https://IceTeaOxO.github.io/post/hugo/site/</guid>
+      <guid>https://IceTeaOxO.github.io/post/learning/hugo/site/</guid>
       <description>先下載Hugo mac的用戶可以使用
 brew install hugo window的用戶請參考官方文件
 在GitHub建立mysite的repository，clone到自己的桌面

@@ -9,10 +9,10 @@
     <lastBuildDate>Sun, 15 Jan 2023 20:46:22 +0800</lastBuildDate><atom:link href="https://IceTeaOxO.github.io/tags/c#/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>C#簡介</title>
-      <link>https://IceTeaOxO.github.io/post/csharp/intro/</link>
+      <link>https://IceTeaOxO.github.io/post/learning/csharp/intro/</link>
       <pubDate>Sun, 15 Jan 2023 20:46:22 +0800</pubDate>
       
-      <guid>https://IceTeaOxO.github.io/post/csharp/intro/</guid>
+      <guid>https://IceTeaOxO.github.io/post/learning/csharp/intro/</guid>
       <description>C#文件
 C#核心是物件導向的語言，可以定義類型及行為
 垃圾收集 可為null 例外狀況處理 Lambda運算式:支援功能型程式設計 語言整合式查詢(LINQ) 非同步作業:支援建立分散式系統的語法 具統一的類型系統:所有的型別都繼承自object 支援定義參考型別和實數值型別 動態設定物件和輕量結構的內嵌儲存體 支援泛型方法和類型 強調版本控制:virtual和override修飾詞、方法多載解析的規則，對明確介面成員宣告的支援 .NET C#在.NET上執行
