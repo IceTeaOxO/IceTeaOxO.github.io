@@ -6,7 +6,19 @@
     <description>Recent content in GitHub Page on Pure White</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zn-tw</language>
-    <lastBuildDate>Sat, 04 Feb 2023 21:44:15 +0800</lastBuildDate><atom:link href="https://IceTeaOxO.github.io/categories/github-page/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 14 Feb 2023 13:14:29 +0800</lastBuildDate><atom:link href="https://IceTeaOxO.github.io/categories/github-page/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>分散式系統學習</title>
+      <link>https://IceTeaOxO.github.io/post/learning/distributed/note/</link>
+      <pubDate>Tue, 14 Feb 2023 13:14:29 +0800</pubDate>
+      
+      <guid>https://IceTeaOxO.github.io/post/learning/distributed/note/</guid>
+      <description>簡介 為了提升系統的可用性，例如同時處理上千萬個請求，單靠一台機器是辦不到的，會需要多台機器進行分工、合作。
+在設計分散式系統的時候，有CAP不可兼得的理論，在大多數的情況下都需要根據實際情況做出取捨。
+C是一致性，受限於現實世界的傳輸限制，位於不同地區的機器資料可能會不一致。 A是可用性，使用者能不能24小時365天都能順利取得服務。 P是分區容錯性，如果發生封包遺失，網路堵塞等問題，能不能正常的提供服務，通常是必選，因為目前都是利用網路來提供服務。
+狀態機 狀態機是用來確保一致性的一個方法，概念大概是初始狀態一樣，指令的順序一樣，那麼結果也應該要一樣</description>
+    </item>
+    
     <item>
       <title>Fenix System</title>
       <link>https://IceTeaOxO.github.io/post/learning/fenix/fenix/</link>
