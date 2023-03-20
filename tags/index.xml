@@ -1,38 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Pure White</title>
+    <title>Tags on 夜貓筆記</title>
     <link>https://IceTeaOxO.github.io/tags/</link>
-    <description>Recent content in Tags on Pure White</description>
+    <description>Recent content in Tags on 夜貓筆記</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zn-tw</language>
-    <lastBuildDate>Sat, 04 Feb 2023 21:44:15 +0800</lastBuildDate><atom:link href="https://IceTeaOxO.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>system design</title>
-      <link>https://IceTeaOxO.github.io/tags/system-design/</link>
-      <pubDate>Sat, 04 Feb 2023 21:44:15 +0800</pubDate>
-      
-      <guid>https://IceTeaOxO.github.io/tags/system-design/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>C#</title>
-      <link>https://IceTeaOxO.github.io/tags/c#/</link>
-      <pubDate>Sun, 15 Jan 2023 20:46:22 +0800</pubDate>
-      
-      <guid>https://IceTeaOxO.github.io/tags/c#/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>hugo</title>
-      <link>https://IceTeaOxO.github.io/tags/hugo/</link>
-      <pubDate>Sat, 14 Jan 2023 14:28:16 +0800</pubDate>
-      
-      <guid>https://IceTeaOxO.github.io/tags/hugo/</guid>
-      <description></description>
-    </item>
-    
+    <language>zn-tw</language><atom:link href="https://IceTeaOxO.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
