@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Story on 夜貓筆記</title>
+    <link>https://IceTeaOxO.github.io/categories/story/</link>
+    <description>Recent content in Story on 夜貓筆記</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zn-tw</language>
+    <lastBuildDate>Mon, 20 Mar 2023 22:54:53 +0800</lastBuildDate><atom:link href="https://IceTeaOxO.github.io/categories/story/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1</title>
+      <link>https://IceTeaOxO.github.io/posts/1/</link>
+      <pubDate>Mon, 20 Mar 2023 22:54:53 +0800</pubDate>
+      
+      <guid>https://IceTeaOxO.github.io/posts/1/</guid>
+      <description>簡介架構 GitHub是一個開放原始碼平台，提供許多服務，其中GitHub Page可以用來免費的呈現自己的網頁
+Hugo是一個建造網站的框架，可以免費且快速的建造自己的blog
+測試GitHub Page 使用方法就是將index.html放上去，並去設定開啟page就可以
+安裝Hugo Quick Start | Hugo (gohugo.io)
+要先安裝Git
+再來安裝Hugo，這部分可能會需要進行debug
+Installation | Hugo (gohugo.io)
+基本操作指令 在要git bash, WSL或者vscode terminal裡面執行指令
+hugo new site quickstart cd quickstart git init git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke themes/ananke echo &amp;#34;theme = &amp;#39;ananke&amp;#39;&amp;#34; &amp;gt;&amp;gt; config.toml hugo server hugo new posts/my-first-post.md hugo 目錄架構 修改主題、設定檔 Complete List | Hugo Themes (gohugo.io)
+themes
+git init
+git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke themes/ananke
+Anatole | Hugo Themes (gohugo.io)</description>
+    </item>
+    
+    <item>
+      <title>2</title>
+      <link>https://IceTeaOxO.github.io/posts/2/</link>
+      <pubDate>Mon, 20 Mar 2023 22:54:53 +0800</pubDate>
+      
+      <guid>https://IceTeaOxO.github.io/posts/2/</guid>
+      <description>簡介架構 GitHub是一個開放原始碼平台，提供許多服務，其中GitHub Page可以用來免費的呈現自己的網頁
+Hugo是一個建造網站的框架，可以免費且快速的建造自己的blog
+測試GitHub Page 使用方法就是將index.html放上去，並去設定開啟page就可以
+安裝Hugo Quick Start | Hugo (gohugo.io)
+要先安裝Git
+再來安裝Hugo，這部分可能會需要進行debug
+Installation | Hugo (gohugo.io)
+基本操作指令 在要git bash, WSL或者vscode terminal裡面執行指令
+hugo new site quickstart cd quickstart git init git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke themes/ananke echo &amp;#34;theme = &amp;#39;ananke&amp;#39;&amp;#34; &amp;gt;&amp;gt; config.toml hugo server hugo new posts/my-first-post.md hugo 目錄架構 修改主題、設定檔 Complete List | Hugo Themes (gohugo.io)
+themes
+git init
+git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke themes/ananke
+Anatole | Hugo Themes (gohugo.io)</description>
+    </item>
+    
+    <item>
+      <title>Chapter VI: Esmeralda</title>
+      <link>https://IceTeaOxO.github.io/posts/chapter-6/</link>
+      <pubDate>Fri, 14 Apr 2017 11:25:05 -0400</pubDate>
+      
+      <guid>https://IceTeaOxO.github.io/posts/chapter-6/</guid>
+      <description>We are delighted to be able to inform the reader, that during the whole of this scene, Gringoire and his piece had stood firm. His actors, spurred on by him, had not ceased to spout his comedy, and he had not ceased to listen to it. He had made up his mind about the tumult, and was determined to proceed to the end, not giving up the hope of a return of attention on the part of the public.</description>
+    </item>
+    
+    <item>
+      <title>Chapter I: The Grand Hall</title>
+      <link>https://IceTeaOxO.github.io/posts/chapter-1/</link>
+      <pubDate>Sun, 09 Apr 2017 10:58:08 -0400</pubDate>
+      
+      <guid>https://IceTeaOxO.github.io/posts/chapter-1/</guid>
+      <description>Three hundred and forty-eight years, six months, and nineteen days ago to-day, the Parisians awoke to the sound of all the bells in the triple circuit of the city, the university, and the town ringing a full peal.
+The sixth of January, 1482, is not, however, a day of which history has preserved the memory. There was nothing notable in the event which thus set the bells and the bourgeois of Paris in a ferment from early morning.</description>
+    </item>
+    
+  </channel>
+</rss>

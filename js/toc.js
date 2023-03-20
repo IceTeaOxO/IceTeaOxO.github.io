@@ -1,43 +1,45 @@
-const details = document.querySelector("#toc-details");
+var spy = function () {
+  var elems = document.querySelectorAll(Array.from(Array(6).keys(), x => ".post-body h"+(x+1).toString()));
+  // ":is()" was not supported until Chrome 88+
+  // Here is a backfill
+  if (elems.length == 0) {
+    return;
+  }
+  var supportPageOffset = window.pageXOffset !== undefined;
+  var isCSS1Compat = ((document.compatMode || "") === "CSS1Compat");
 
-function clickToc() {
-    switch (details.style.display) {
-        case 'none':
-            details.style.display = 'block';
-            setTimeout(() =>
-                document.body.addEventListener('click', closeToc), 1);
-            break;
-        case 'block':
-            details.style.display = 'none';
-            break;
+  var currentTop = supportPageOffset ? window.pageYOffset : isCSS1Compat ? document.documentElement.scrollTop : document.body.scrollTop;
+  var currentBottom = currentTop + window.height;
+  var pageBottom = window.pageBottom;
+
+  var meetUnread = false
+  let lastElemName = elems[elems.length - 1].id;
+  elems.forEach(function (elem, idx) {
+    var elemTop = elem.offsetTop;
+    var id = elem.getAttribute('id');
+    var navElems = document.getElementsByClassName("nav-"+id);
+    if (navElems.length == 0) {
+      return
     }
-}
-
-function openToc() {
-    details.style.display = 'block';
-}
-
-function closeToc() {
-    details.style.display = 'none';
-    document.body.removeEventListener('click', closeToc);
-}
-
-function getToc() {
-    const hs = document.querySelector('.markdown-body').querySelectorAll('h1, h2, h3, h4, h5, h6');
-    const toc_list = document.querySelector("#toc-list");
-    for (const h of hs) {
-        const size = Number(h.tagName.toLowerCase().replace('h', ''));
-        const a = document.createElement('a');
-        a.classList.add("filter-item", "SelectMenu-item", "ws-normal", "wb-break-word", "line-clamp-2", "py-1", "toc-item");
-        a.href = `#${h.id}`;
-        a.innerText = h.innerText;
-        a.style.paddingLeft = `${size * 12}px`;
-        toc_list.appendChild(a);
+    if (currentTop >= elemTop || currentBottom >= pageBottom) {
+      Array.from(navElems).forEach((e) => {
+        e.classList.add('toc-active');
+      });
+    } else {
+      if (meetUnread == false) {
+        meetUnread = true;
+        if (idx > 0) {
+          lastElemName = elems[idx - 1].id; 
+        }
+      }
+      Array.from(navElems).forEach((e) => {
+        e.classList.remove('toc-active');
+      });
     }
+  })
+  let selector = ".nav-" + lastElemName;
+  // Two toc elements here
+  document.querySelectorAll(selector).forEach(e => {
+    e.scrollIntoView({ block: "center", behavior: 'smooth' });
+  });
 }
-
-
-// TODO: highlight on scroll
-(() => {
-    getToc();
-})();
