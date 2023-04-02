@@ -6,9 +6,58 @@
     <description>Recent content on 夜貓筆記</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zn-tw</language>
-    <lastBuildDate>Mon, 20 Mar 2023 22:54:53 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 21 Mar 2023 16:43:46 +0800</lastBuildDate>
     
         <atom:link href="https://IceTeaOxO.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>kubenetes-概念介紹</title>
+        <link>https://IceTeaOxO.github.io/posts/kubenetes1/</link>
+        <pubDate>Tue, 21 Mar 2023 16:43:46 +0800</pubDate>
+        
+        <guid>https://IceTeaOxO.github.io/posts/kubenetes1/</guid>
+        <description>夜貓筆記 https://IceTeaOxO.github.io/posts/kubenetes1/ -&lt;p&gt;在一個kubenetes部屬中，至少含有一個完整的集群，每個集群裡面都會有Master Node控制及群容器的溝通，分派任務的控制平面組件，以及至少一個的Worker Node託管Pod。&lt;/p&gt;
+&lt;h3 id=&#34;node&#34;&gt;Node&lt;/h3&gt;
+&lt;p&gt;是最小的主機單位，集群上所有的Pod會被scheduler分派到適合的Nodes中。每個Node上至少有運行container, kubelet, kube-proxy服務。&lt;/p&gt;
+&lt;h3 id=&#34;pod&#34;&gt;Pod&lt;/h3&gt;
+&lt;p&gt;是最小的基礎單元，代表應用的單個實例。每個Pod都是一個或以上的容器以及若干控制器組成。與Docker一樣支持volume，以運行有狀態應用。&lt;/p&gt;
+&lt;h3 id=&#34;kublet&#34;&gt;kublet&lt;/h3&gt;
+&lt;p&gt;每個Node中都包含一個kublet，是與控制平面溝通的應用，用來確保容器在容器集內運行。當控制平面需要節點進行操作的時候，kublet就會執行該操作。&lt;/p&gt;
+&lt;h3 id=&#34;kube-proxy&#34;&gt;kube-proxy&lt;/h3&gt;
+&lt;p&gt;每個Node中包含kebe-proxy，用於優化網路代理，負責處理集群內部或外部的網路通信，提供集群內部的負載均衡。&lt;/p&gt;
+&lt;h3 id=&#34;kube-apiserver&#34;&gt;kube-apiserver&lt;/h3&gt;
+&lt;h3 id=&#34;kube-scheduler&#34;&gt;kube-scheduler&lt;/h3&gt;
+&lt;h3 id=&#34;kube-controller-manager&#34;&gt;kube-controller-manager&lt;/h3&gt;
+&lt;h3 id=&#34;etcd&#34;&gt;etcd&lt;/h3&gt;
+&lt;p&gt;有關集群狀態已經集群相關配置設定位於 etcd，以便集群 crash 後的迅速還原當前狀態。&lt;/p&gt;
+&lt;h2 id=&#34;安裝&#34;&gt;安裝&lt;/h2&gt;
+&lt;p&gt;進入到docker desktop的設定裡面，尋找kubenetes並進行安裝&lt;/p&gt;
+&lt;p&gt;短篇架構:前言、內容、結論&lt;/p&gt;
+&lt;p&gt;I. 前言&lt;/p&gt;
+&lt;p&gt;介紹 Kubernetes 的背景和意義
+概述本篇文章的內容
+II. Kubernetes 簡介&lt;/p&gt;
+&lt;p&gt;介紹 Kubernetes 的基本概念和架構
+比較 Kubernetes 和傳統的單機部署方式的差異和優勢
+解釋 Kubernetes 中的重要概念，如 Pod、Service、Deployment 等
+III. Kubernetes 的核心功能&lt;/p&gt;
+&lt;p&gt;深入探討 Kubernetes 的核心功能，如自動化部署、自動擴展、自動恢復等
+說明如何使用 Kubernetes 來管理容器化應用程式
+IV. Kubernetes 的應用場景&lt;/p&gt;
+&lt;p&gt;探討 Kubernetes 在不同的應用場景下的優勢和應用案例，如大型網路應用、雲端原生應用、機器學習和人工智慧等
+V. Kubernetes 的生態系統&lt;/p&gt;
+&lt;p&gt;簡要介紹 Kubernetes 的生態系統和相關技術，如 Istio、Helm、Prometheus 等
+探討這些技術和 Kubernetes 之間的關係和互動
+VI. Kubernetes 的部署和管理&lt;/p&gt;
+&lt;p&gt;介紹如何在不同的環境下部署和管理 Kubernetes，包括本地環境、公有雲和私有雲等
+說明如何設置 Kubernetes 的叢集和管理工具，如 kubectl、kubeadmin 等
+VII. 結語&lt;/p&gt;
+&lt;p&gt;總結 Kubernetes 的優勢和未來發展趨勢
+提供一些學習 Kubernetes 的資源和建議&lt;/p&gt;
+- https://IceTeaOxO.github.io/posts/kubenetes1/ - </description>
+        </item>
     
     
     
